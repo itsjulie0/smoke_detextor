@@ -137,7 +137,7 @@ client.messages
   .then(message => console.log(message.sid));
 
 /****************Response*******************/
-
+/*
 //const http = require('http');
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 //app.use(bodyParser.urlencoded({ extended: false }));
@@ -163,3 +163,4 @@ http.createServer(app).listen(1337, () => {
   console.log('Express server listening on port 1337');
 });
 
+*/
