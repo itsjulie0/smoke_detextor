@@ -1,0 +1,57 @@
+<% include ./partials/head %>
+<% include ./partials/header %>
+
+
+<!--- USER INPUT FORM ---->
+<form class="ui form" action='/configure' method='post'>
+	<h1 class="ui centered header">Please Input Your Contact Information</h1>
+	<div class="ui divider"></div>
+	<div class="field">
+		<label>Name</label>
+		<div class="field">
+      <div class="twelve wide field">
+			  <input type="text" name="info[name]" placeholder="Full Name">
+		  </div>
+		</div>
+  </div>
+  <div class="field">
+    <label>Address</label>
+    <div class="fields">
+      <div class="twelve wide field">
+        <input type="text" name="info[address]" placeholder="Street Address">
+      </div>
+    </div>
+  </div>
+  <div class="ui form">
+    <div class="inline fields">
+      <label>Your Phone Number</label>
+      <div class="field">
+        <input type="text" name="info[phoneNumber]" placeholder="xxx-xxx-xxxx">
+      </div>
+    </div>
+  </div>
+  <div class="ui form">
+    <div class="inline fields">
+      <label>Emergency Contact</label>
+      <div class="control">
+        <input type="text" name="info[emergencyNumber]" placeholder="xxx-xxx-xxxx">
+      </div>
+    </div>
+    <div class="inline fields">
+      <label> Emergency Dispatch</label>
+      <div class="control">
+        <input readonly="" type="text" name="Police" value="911">
+      </div>
+    </div>
+  </div>
+  <div class='two wide field'>
+    <input type='submit' class='ui submit button' name='configure' value='Submit'>
+  </div>
+</form>
+
+<script type="text/javascript" src='/js/user.js'></script>
+<script type="text/javascript" scr='/js/jscolor.js'></script>
+<script type="text/javascript">
+  setActivePage('nav_user');
+</script>
+<% include ./partials/foot %>

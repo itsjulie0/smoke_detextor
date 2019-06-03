@@ -1,0 +1,1 @@
+setActivePage('current_info');
