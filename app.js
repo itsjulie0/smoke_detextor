@@ -122,7 +122,7 @@ app.use('/', indexRoutes);
 app.use('/api', apiRoutes);
 
 app.listen(app.get('port'),() => console.log('Listening on port ' + app.get('port')));
-/************** Text ******************
+/************** Text ******************/
 
 const account_sid = "ACb63c109c52daf392846e20ed706d4afd"
 const auth_token = "99e800ac8597937082f6e0e946d66fa7"
@@ -137,7 +137,7 @@ client.messages
   .then(message => console.log(message.sid));
 
 /****************Response*******************/
-/*
+
 //const http = require('http');
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 //app.use(bodyParser.urlencoded({ extended: false }));
@@ -162,4 +162,4 @@ app.post('/sms', (req, res) => {
 http.createServer(app).listen(1337, () => {
   console.log('Express server listening on port 1337');
 });
-*/
+

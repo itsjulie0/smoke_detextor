@@ -1,4 +1,10 @@
-var db = require('../models');
+var db          = require('../models');
+var http        = require('http');
+var bodyParser  = require('body-parser');
+var twilio      = require('twilio');
+
+var myVar;
+
 
 exports.sendSMS = function(req, res) {
     // Download the helper library from https://www.twilio.com/docs/node/install
@@ -10,16 +16,15 @@ exports.sendSMS = function(req, res) {
     
     client.messages
           .create({
-            body: 'body',
+            body: 'Do you need assistance?',
             from: '+14245328392',
-            statusCallback: 'http://smokedetextor.herokuapp.com/api/sms',
+            statusCallback: 'https://julies-smoke-detector.herokuapp.com/',
             to: '+18186352564'
           })
           .then(message => console.log(message.sid));
 	 
 	  
-	res.json({message: 'This is julie'});
-	console.log('Sent a message');
+	
 }
 
 exports.callBack = function(req, res) {
@@ -28,8 +33,10 @@ exports.callBack = function(req, res) {
 
     if (req.body.Body == 'Yes') {
         twiml.message('Help is on the way');
+        clearTimeout(myVar);
     } else if (req.body.Body == 'No') {
         twiml.message('Glad to hear. Have a good day!');
+        clearTimeout(myVar);
     } else {
         twiml.message(
           'Please respond Yes or No'
