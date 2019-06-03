@@ -18,7 +18,7 @@ exports.sendSMS = function(req, res) {
           .create({
             body: 'Do you need assistance?',
             from: '+14245328392',
-            statusCallback: 'https://julies-smoke-detector.herokuapp.com/',
+            statusCallback: 'https://julies-smoke-detector.herokuapp.com/api/sms',
             to: '+18186352564'
           })
           .then(message => console.log(message.sid));
