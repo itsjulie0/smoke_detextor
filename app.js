@@ -130,7 +130,7 @@ const client = require('twilio')(account_sid,auth_token);
 
 client.messages
   .create({
-    body: "Do you need assistance?",
+    body: "Do you need assistance -Julie?",
     from: "+14245328392",
     to: "+18186352564"
    })
