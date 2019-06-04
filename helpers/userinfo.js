@@ -11,7 +11,7 @@ exports.getUserInfo = function(req, res) {
 }
 
 exports.editUserInfo = function(req, res) {
-    db.Stats.findOneAndUpdate({}, req.body, {'new': true, upsert: true})
+    db.userInfo.findOneAndUpdate({}, req.body, {'new': true, upsert: true})
     .then( function(editedUserInfo) {
         res.json(editedUserInfo);
     })

@@ -35,22 +35,22 @@ exports.sendSMS = function(req, res) {
           })
           .then(message => console.log(message.sid));
 	 
-myVar=setTimeout(function(){
+myVar=setTimeout( function(){
      client.messages
-                            .create({
-                               body: "Your emergency contact has been notified.",
-                              from: fromNum,
-                              to: phoneNumber
+         .create({
+            body: "Your emergency contact has been notified.",
+            from: fromNum,
+            to: phoneNumber
+        })
+          .then(message => console.log(message.sid));
+            client.messages
+          .create({
+            body: name + " needs help! There is a fire at " + address + ". Please contact authorities",
+            from: fromNum,
+            to: emergencyNumber
                             })
-                            .then(message => console.log(message.sid));
-                          client.messages
-                            .create({
-                              body: name + " needs help! There is a fire at " + address + ". Please contact authorities",
-                              from: fromNum,
-                              to: emergencyNumber
-                            })
-                            .then(message => console.log(message.sid));
-                                  }, 15000); //180000 for 3 min
+            .then(message => console.log(message.sid));
+}, 15000); //180000 for 3 min
     res.json({message: 'Message Center'});
     //console.log('Sent a message');
 
@@ -69,6 +69,7 @@ exports.callBack = function(req, res) {
       name = result.name;
       phoneNumber = result.phoneNumber;
       emergencyNumber = result.emergencyNumber;
+      address = result.address
     });
     
             if (req.body.Body == 'Yes') {
