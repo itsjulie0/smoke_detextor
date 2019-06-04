@@ -8,6 +8,7 @@ var fromNum= "+14245328392"
 var emergencyNumber;
 var phoneNumber;
 var address;
+var name;
 
 
 const accountSid = 'ACb63c109c52daf392846e20ed706d4afd';

@@ -18,6 +18,7 @@ router.get('/current_info', (req,res) => {
       result.phoneNumber = formatPhoneNumber(result.phoneNumber);
       result.emergencyNumber = formatPhoneNumber(result.emergencyNumber);
       //console.log(result.phoneNumber);
+
       res.render('info', {info: result});
     })
     .catch (function(err) {
@@ -28,7 +29,6 @@ router.get('/current_info', (req,res) => {
 
 
 router.post('/configure',  (req,res) =>{
-
 /*
 router.post('/seedInfo', (req,res) => {
 
