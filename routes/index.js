@@ -16,6 +16,7 @@ router.get('/current_info', (req,res) => {
     .then( function(result) {
       //console.log(result.phoneNumber);
       result.phoneNumber = formatPhoneNumber(result.phoneNumber);
+      result.emergencyNumber = formatPhoneNumber(result.emergencyNumber);
       //console.log(result.phoneNumber);
       res.render('info', {info: result});
     })
