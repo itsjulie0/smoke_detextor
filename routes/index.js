@@ -41,7 +41,7 @@ router.post('/seedInfo', (req,res) => {
       phoneNumber: '1234354565',
       emergencyNumber: '563456756',
     } */
-    /*
+  
     db.userInfo.findOneAndUpdate({}, req.body.info , {'new': true, upsert:true})
     .then(function(edited) {
       info = edited;
@@ -51,16 +51,7 @@ router.post('/seedInfo', (req,res) => {
         res.send(err);
   })
 });
-*/
-db.userInfo.findOne({})
-    .then(function(edited) {
-      info = edited;
-      res.redirect('/current_info');
-  })
-      .catch(function(err){
-        res.send(err);
-  })
-});
+
 function formatPhoneNumber(phoneNumberString) {
   var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
   var match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/)
